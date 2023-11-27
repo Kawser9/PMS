@@ -16,11 +16,9 @@
                 <thead>
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">SL</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name & Image</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name </th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
-                    <th class="text-secondary opacity-7"></th>
+                    <th class="text-secondary opacity-7">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,19 +31,8 @@
                     </td>
                     <td>
                       <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="{{url('/uploads/category/',$categoty->image)}}" class="avatar avatar-sm me-3" alt="user1">
-                        </div>
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">{{$categoty->name}}</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Manager</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-success">Online</span>
                     </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-xs font-weight-bold">{{$categoty->created_at}}</span>

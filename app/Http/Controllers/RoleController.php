@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
+use App\Models\RolePermission;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -26,5 +28,16 @@ class RoleController extends Controller
             'name'=>$request->name,
         ]);
         return redirect()->back();
+    }
+
+    public function roleAssign($id){
+
+        $role=Role::with('permissions')->find($id);
+
+        $assignedPermissions=$role->permissions->pluck('permission_id')->toArray();
+        // dd($assignedPermissions);
+        $permissions=Permission::all();
+        // dd($permissions);
+        return view('backend.pages.role.assign',compact('permissions','role','assignedPermissions'));
     }
 }
